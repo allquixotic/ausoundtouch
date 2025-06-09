@@ -1,0 +1,171 @@
+todo.md
+CLAUDE.md
+# Build directories
+build/
+*/build/
+*/Builds/
+cmake-build-*/
+.cmake/
+
+# Build artifacts
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+*.component
+*.vst
+*.vst3
+*.au
+*.aaxplugin
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.*.swp
+.*.swo
+*.sublime-project
+*.sublime-workspace
+xcuserdata/
+*.xcworkspace/
+*.xcodeproj/
+!default.xcworkspace
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# macOS junk files
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Thumbnails
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Package files
+*.dmg
+*.pkg
+*.deb
+*.rpm
+*.msi
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Log files
+*.log
+*.txt.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Test output
+Testing/
+test-results/
+*.gcda
+*.gcno
+*.gcov
+coverage/
+*.profraw
+*.profdata
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+tmp/
+temp/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+.env
+.venv
+env/
+venv/
+
+# Node.js (for any web-based tools)
+node_modules/
+.npm
+.yarn/
+.pnp.*
+
+# JUCE specific
+JuceLibraryCode/BinaryData.cpp
+JuceLibraryCode/BinaryData.h
+**/JuceLibraryCode/ReadMe.txt
+
+# Audio test files (optional - uncomment if you want to exclude test audio)
+# *.wav
+# *.mp3
+# *.aiff
+# *.flac
+
+# Notarization files
+*.zip
+!*-release.zip
+
+# CMake
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+cmake_install.cmake
+install_manifest.txt
+
+# Ninja
+.ninja_deps
+.ninja_log
+build.ninja
+rules.ninja
+
+# dotenvx
+.env.keys
+
+# Crash dumps
+*.dmp
+*.core
+core
+
+# Signing
+*.p12
+*.cer
+*.certSigningRequest
+*.mobileprovision
