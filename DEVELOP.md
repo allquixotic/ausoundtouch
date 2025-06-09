@@ -58,7 +58,7 @@ native = 1.0 + (percentage / 100.0)
 ### Repository Structure
 
 ```
-/Users/sean/dev/aust/
+<ausoundtouch root>/
 ├── AUSoundTouch/              # Plugin source
 │   ├── CMakeLists.txt         # Main CMake configuration
 │   ├── Source/                # C++ source files
@@ -99,7 +99,7 @@ native = 1.0 + (percentage / 100.0)
 
 ## Build System
 
-The project uses a Makefile wrapper around CMake for convenience. All commands should be run from the top-level directory (`/Users/sean/dev/aust/`).
+The project uses a Makefile wrapper around CMake for convenience. All commands should be run from the top-level directory (`<ausoundtouch root>`).
 
 ### Common Build Commands
 
