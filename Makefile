@@ -332,19 +332,11 @@ dmg:
 		echo "Release build not found. Run 'make release' first."; \
 		exit 1; \
 	fi
-	@echo "Creating DMG with LZMA compression..."
-	@hdiutil create -volname "$(PLUGIN_NAME)" \
-		-srcfolder $(BUILD_DIR)/$(PLUGIN_NAME)_artefacts/Release/AU/$(PLUGIN_NAME).component \
-		-fs HFS+ -fsargs "-c c=64,a=16,e=16" \
-		-format ULMO \
-		-ov \
-		$(BUILD_DIR)/$(PLUGIN_NAME).dmg > /dev/null
 	@if dotenvx run -- sh -c '[ -n "$$CODESIGN_ID" ]'; then \
-		echo "Signing DMG..."; \
-		dotenvx run -- sh -c 'codesign --force --timestamp \
-			--sign "$$CODESIGN_ID" $(BUILD_DIR)/$(PLUGIN_NAME).dmg'; \
+		dotenvx run -- ./create-dmg.sh; \
+	else \
+		./create-dmg.sh; \
 	fi
-	@echo "✅ DMG created: $(BUILD_DIR)/$(PLUGIN_NAME).dmg"
 
 # Complete distribution workflow: build, test, sign, notarize, create DMG
 .PHONY: dist
@@ -367,16 +359,8 @@ dist: release test-release
 	@echo "Step 6/6: Stapling ticket..."
 	@xcrun stapler staple $(BUILD_DIR)/$(PLUGIN_NAME)_artefacts/Release/AU/$(PLUGIN_NAME).component
 	@xcrun stapler validate $(BUILD_DIR)/$(PLUGIN_NAME)_artefacts/Release/AU/$(PLUGIN_NAME).component
-	@echo "▶︎ Creating DMG with LZMA compression..."
-	@hdiutil create -volname "$(PLUGIN_NAME)" \
-		-srcfolder $(BUILD_DIR)/$(PLUGIN_NAME)_artefacts/Release/AU/$(PLUGIN_NAME).component \
-		-fs HFS+ -fsargs "-c c=64,a=16,e=16" \
-		-format ULMO \
-		-ov \
-		$(BUILD_DIR)/$(PLUGIN_NAME).dmg > /dev/null
-	@echo "▶︎ Signing DMG..."
-	@dotenvx run -- sh -c 'codesign --force --timestamp \
-		--sign "$$CODESIGN_ID" $(BUILD_DIR)/$(PLUGIN_NAME).dmg'
+	@echo "▶︎ Creating DMG with Components folder shortcut..."
+	@dotenvx run -- ./create-dmg.sh
 	@echo "▶︎ Submitting DMG for notarization..."
 	@dotenvx run -- sh -c 'xcrun notarytool submit $(BUILD_DIR)/$(PLUGIN_NAME).dmg \
 		--keychain-profile "$$NOTARY_PROFILE" \

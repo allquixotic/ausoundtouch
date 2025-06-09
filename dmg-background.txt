@@ -1,0 +1,15 @@
+# DMG Background Design Specification
+# This would be implemented as a 500x300 PNG image
+
+Layout:
+- Background color: Light gray (#F0F0F0) with subtle gradient
+- Large arrow pointing from left to right in the center
+- Text above the arrow: "Drag to install"
+- Drop shadow effects on the arrow
+- Optional: AUSoundTouch logo in top-left corner
+
+The visual flow would be:
+[AUSoundTouch.component] -----> [Components Folder]
+       (left side)                  (right side)
+
+This makes it immediately obvious what the user needs to do.

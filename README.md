@@ -2,6 +2,8 @@
 
 AUSoundTouch is a professional audio plugin for macOS that lets you change the pitch, tempo, and speed of any audio in real-time with exceptional quality. Unlike the basic pitch shifter that comes with macOS, AUSoundTouch uses advanced algorithms to maintain crystal-clear audio quality even with extreme pitch changes.
 
+The pitch shifting algorithm used by SoundTouch avoids the "echoing" problem that occurs with other algorithms, where the two tracks of a stereo audio file get out of sync, and it sounds like there's extra reverb that makes everything sound unclear and muddled.
+
 ## What Can It Do?
 
 - **🎵 Pitch Shifting**: Change pitch up to ±40 semitones without the "chipmunk" effect
@@ -63,8 +65,8 @@ AUSoundTouch provides:
 ## System Requirements
 
 - macOS Sonoma (14.0) or later
-- Any Audio Unit compatible host application
-- Apple Silicon (M1/M2/M3) or Intel Mac
+- Any Audio Unit v3 compatible host application (tested with Logic Pro and Rogue Amoeba products)
+- Apple Silicon (M1/M2/M3) or Intel Mac (downloadable binary from GitHub is currently for Apple Silicon only, but it should work on Intel Mac when built from source)
 
 ## About
 
@@ -72,7 +74,7 @@ AUSoundTouch is a modern, native macOS implementation inspired by the classic rb
 
 ## License
 
-This project is licensed under the MIT License. The SoundTouch library is used under the LGPL license.
+This project is licensed under the AGPLv3 License. The JUCE framework is used under the AGPLv3 license. The SoundTouch library is used under the LGPLv2.1 license.
 
 ## Troubleshooting
 

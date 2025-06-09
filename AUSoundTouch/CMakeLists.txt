@@ -285,6 +285,7 @@ target_compile_definitions(AUSoundTouch
 juce_add_console_app(AUSoundTouchTests
     PRODUCT_NAME "AUSoundTouch Unit Tests"
     COMPANY_NAME "Sean McNamara"
+    BUNDLE_ID "com.github.allquixotic.AUSoundTouchTests"
 )
 
 # Generate JUCE header for tests
@@ -358,6 +359,7 @@ add_test(NAME UnitTests COMMAND AUSoundTouchTests)
 juce_add_console_app(AUSoundTouchFunctionalTests
     PRODUCT_NAME "AUSoundTouch Functional Tests"
     COMPANY_NAME "Sean McNamara"
+    BUNDLE_ID "com.github.allquixotic.AUSoundTouchFunctionalTests"
 )
 
 # Generate JUCE header for functional tests
@@ -422,6 +424,7 @@ add_test(NAME FunctionalTests COMMAND AUSoundTouchFunctionalTests)
 juce_add_console_app(PitchShiftValidationTest
     PRODUCT_NAME "Pitch Shift Validation Test"
     COMPANY_NAME "Sean McNamara"
+    BUNDLE_ID "com.github.allquixotic.PitchShiftValidationTest"
 )
 
 # Generate JUCE header for pitch shift test
